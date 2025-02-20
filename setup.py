@@ -1,15 +1,24 @@
-from cx_Freeze import setup
+import sys
+from cx_Freeze import setup, Executable
 
-# Dependencies are automatically detected, but they might need fine-tuning.
-build_exe_options = {
-    "excludes": ["tkinter", "unittest"],
-    "zip_include_packages": ["encodings", "PySide6", "shiboken6"],
+base = None
+if sys.platform == "win32":
+    base = "Win32GUI"
+
+executables = [Executable("your_main_script.py", base=base, icon="tube.ico")]
+
+packages = ["os", "kivymd", "pytubefix", "moviepy", "kivy", "subprocess", "threading"]
+options = {
+    'build_exe': {
+        'packages': packages,
+        'include_files': ["bg.jpg", "tube.png"]
+    },
 }
 
 setup(
-    name="guifoo",
-    version="0.1",
-    description="My GUI application!",
-    options={"build_exe": build_exe_options},
-    executables=[{"script": "guifoo.py", "base": "gui"}],
+    name="YouTubeDownloaderApp",
+    options=options,
+    version="1.0",
+    description='An app to download YouTube videos and audios',
+    executables=executables
 )
