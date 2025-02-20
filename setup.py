@@ -5,7 +5,7 @@ base = None
 if sys.platform == "win32":
     base = "Win32GUI"
 
-executables = [Executable("your_main_script.py", base=base, icon="tube.ico")]
+executables = [Executable("main.py", base=base, icon="tube.ico")]
 
 packages = ["os", "kivymd", "pytubefix", "moviepy", "kivy", "subprocess", "threading"]
 options = {
