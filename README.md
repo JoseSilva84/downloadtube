@@ -1,6 +1,6 @@
-# YouTubeDownloaderApp
+# DownloadTube
 
-YouTubeDownloaderApp é uma aplicação para baixar vídeos e áudios do YouTube usando Python, KivyMD, MoviePy e PyTubeFix.
+DownloadTube é uma aplicação para baixar vídeos e áudios do YouTube usando Python, KivyMD, MoviePy e PyTubeFix.
 
 ## Funcionalidades
 
