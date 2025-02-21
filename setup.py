@@ -1,11 +1,6 @@
-import sys
 from cx_Freeze import setup, Executable
 
-base = None
-if sys.platform == "win32":
-    base = "Win32GUI"
-
-executables = [Executable("main.py", base=base, icon="tube.ico")]
+executables = [Executable("main.py", icon="tube.ico")]
 
 packages = ["os", "kivymd", "pytubefix", "moviepy", "kivy", "subprocess", "threading"]
 options = {
@@ -16,9 +11,9 @@ options = {
 }
 
 setup(
-    name="YouTubeDownloaderApp",
+    name="DownloadeTube",
     options=options,
     version="1.0",
-    description='An app to download YouTube videos and audios',
+    description="Um sistema para download de vídeos ou áudio do YouTube",
     executables=executables
 )
